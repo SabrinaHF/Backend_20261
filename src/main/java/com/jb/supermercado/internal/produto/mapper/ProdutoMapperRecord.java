@@ -3,14 +3,14 @@ package com.jb.supermercado.internal.produto.mapper;
 import com.jb.supermercado.internal.produto.entity.ProdutoEntity;
 import com.jb.supermercado.internal.produto.dto.ProdutoRequestRecord;
 import com.jb.supermercado.internal.produto.dto.ProdutoResponseRecord;
-import com.jb.supermercado.internal.usuario.dto.UsuarioResponseRecord;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProdutoMapperRecord {
 
-        public static ProdutoEntity requesttoProdutoEntity(ProdutoRequestRecord produtoRequest) {
+        public static ProdutoEntity requestToProdutoEntity(ProdutoRequestRecord produtoRequest) {
 
             ProdutoEntity produtoEntity = new ProdutoEntity();
 
@@ -23,7 +23,7 @@ public class ProdutoMapperRecord {
             return produtoEntity;
         }
 
-        public static ProdutoResponseRecord entitytoProdutoResponse(ProdutoEntity produtoEntity) {
+        public static ProdutoResponseRecord entityToProdutoResponse(ProdutoEntity produtoEntity) {
 
             return new ProdutoResponseRecord(
                     produtoEntity.getId(),
@@ -35,11 +35,11 @@ public class ProdutoMapperRecord {
 
         }
 
-        public static List<ProdutoResponseRecord> entitytoProdutoResponse(List<ProdutoEntity> produtoEntityList){
+        public static List<ProdutoResponseRecord> entityToProdutoResponse(List<ProdutoEntity> produtoEntityList){
 
             List<ProdutoResponseRecord> produtoResponseRecordArrayList = new ArrayList<>();
             for(ProdutoEntity produtoEntity : produtoEntityList){
-                produtoResponseRecordArrayList.add(entitytoProdutoResponse(produtoEntity));
+                produtoResponseRecordArrayList.add(entityToProdutoResponse(produtoEntity));
             }
 
             return produtoResponseRecordArrayList;
